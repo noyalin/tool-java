@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="从库">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="mysql">
+      <Visible>1</Visible>
+    </schema>
+    <table id="3" parent="2" name="event">
+      <Comment>Events</Comment>
+    </table>
+    <table id="4" parent="2" name="func">
+      <Comment>User defined functions</Comment>
+    </table>
+    <table id="5" parent="2" name="general_log">
+      <Comment>General log</Comment>
+    </table>
+    <table id="6" parent="2" name="help_category">
+      <Comment>help categories</Comment>
+    </table>
+    <table id="7" parent="2" name="help_keyword">
+      <Comment>help keywords</Comment>
+    </table>
+    <table id="8" parent="2" name="help_relation">
+      <Comment>keyword-topic relation</Comment>
+    </table>
+    <table id="9" parent="2" name="help_topic">
+      <Comment>help topics</Comment>
+    </table>
+    <table id="10" parent="2" name="proc">
+      <Comment>Stored Procedures</Comment>
+    </table>
+    <table id="11" parent="2" name="slow_log">
+      <Comment>Slow log</Comment>
+    </table>
+    <table id="12" parent="2" name="time_zone">
+      <Comment>Time zones</Comment>
+    </table>
+    <table id="13" parent="2" name="time_zone_leap_second">
+      <Comment>Leap seconds information for time zones</Comment>
+    </table>
+    <table id="14" parent="2" name="time_zone_name">
+      <Comment>Time zone names</Comment>
+    </table>
+    <table id="15" parent="2" name="time_zone_transition">
+      <Comment>Time zone transitions</Comment>
+    </table>
+    <table id="16" parent="2" name="time_zone_transition_type">
+      <Comment>Time zone transition types</Comment>
+    </table>
+    <column id="17" parent="3" name="db">
+      <DataType>char(64)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="18" parent="3" name="name">
+      <DataType>char(64)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="19" parent="3" name="body">
+      <DataType>longblob|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="3" name="definer">
+      <DataType>char(77)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="21" parent="3" name="execute_at">
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="22" parent="3" name="interval_value">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="23" parent="3" name="interval_field">
+      <DataType>enum(&apos;YEAR&apos;, &apos;QUARTER&apos;, &apos;MONTH&apos;, &apos;DAY&apos;, &apos;HOUR&apos;, &apos;MINUTE&apos;, &apos;WEEK&apos;, &apos;SECOND&apos;, &apos;MICROSECOND&apos;, &apos;YEAR_MONTH&apos;, &apos;DAY_HOUR&apos;, &apos;DAY_MINUTE&apos;, &apos;DAY_SECOND&apos;, &apos;HOUR_MINUTE&apos;, &apos;HOUR_SECOND&apos;, &apos;MINUTE_SECOND&apos;, &apos;DAY_MICROSECOND&apos;, &apos;HOUR_MICROSECOND&apos;, &apos;MINUTE_MICROSECOND&apos;, &apos;SECOND_MICROSECOND&apos;)|0</DataType>
+    </column>
+    <column id="24" parent="3" name="created">
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;CURRENT_TIMESTAMP&apos;</DefaultExpression>
+    </column>
+    <column id="25" parent="3" name="modified">
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <column id="26" parent="3" name="last_executed">
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="27" parent="3" name="starts">
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="28" parent="3" name="ends">
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="29" parent="3" name="status">
+      <DataType>enum(&apos;ENABLED&apos;, &apos;DISABLED&apos;, &apos;SLAVESIDE_DISABLED&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;ENABLED&apos;</DefaultExpression>
+    </column>
+    <column id="30" parent="3" name="on_completion">
+      <DataType>enum(&apos;DROP&apos;, &apos;PRESERVE&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;DROP&apos;</DefaultExpression>
+    </column>
+    <column id="31" parent="3" name="sql_mode">
+      <DataType>set(&apos;REAL_AS_FLOAT&apos;, &apos;PIPES_AS_CONCAT&apos;, &apos;ANSI_QUOTES&apos;, &apos;IGNORE_SPACE&apos;, &apos;NOT_USED&apos;, &apos;ONLY_FULL_GROUP_BY&apos;, &apos;NO_UNSIGNED_SUBTRACTION&apos;, &apos;NO_DIR_IN_CREATE&apos;, &apos;POSTGRESQL&apos;, &apos;ORACLE&apos;, &apos;MSSQL&apos;, &apos;DB2&apos;, &apos;MAXDB&apos;, &apos;NO_KEY_OPTIONS&apos;, &apos;NO_TABLE_OPTIONS&apos;, &apos;NO_FIELD_OPTIONS&apos;, &apos;MYSQL323&apos;, &apos;MYSQL40&apos;, &apos;ANSI&apos;, &apos;NO_AUTO_VALUE_ON_ZERO&apos;, &apos;NO_BACKSLASH_ESCAPES&apos;, &apos;STRICT_TRANS_TABLES&apos;, &apos;STRICT_ALL_TABLES&apos;, &apos;NO_ZERO_IN_DATE&apos;, &apos;NO_ZERO_DATE&apos;, &apos;INVALID_DATES&apos;, &apos;ERROR_FOR_DIVISION_BY_ZERO&apos;, &apos;TRADITIONAL&apos;, &apos;NO_AUTO_CREATE_USER&apos;, &apos;HIGH_NOT_PRECEDENCE&apos;, &apos;NO_ENGINE_SUBSTITUTION&apos;, &apos;PAD_CHAR_TO_FULL_LENGTH&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="32" parent="3" name="comment">
+      <DataType>char(64)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="33" parent="3" name="originator">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="3" name="time_zone">
+      <DataType>char(64)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;SYSTEM&apos;</DefaultExpression>
+    </column>
+    <column id="35" parent="3" name="character_set_client">
+      <DataType>char(32)|0</DataType>
+    </column>
+    <column id="36" parent="3" name="collation_connection">
+      <DataType>char(32)|0</DataType>
+    </column>
+    <column id="37" parent="3" name="db_collation">
+      <DataType>char(32)|0</DataType>
+    </column>
+    <column id="38" parent="3" name="body_utf8">
+      <DataType>longblob|0</DataType>
+    </column>
+    <key id="39" parent="3" name="PRIMARY">
+      <ColNames>db
+name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="4" name="name">
+      <DataType>char(64)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="41" parent="4" name="ret">
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="42" parent="4" name="dl">
+      <DataType>char(128)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="43" parent="4" name="type">
+      <DataType>enum(&apos;function&apos;, &apos;aggregate&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="44" parent="4" name="PRIMARY">
+      <ColNames>name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="45" parent="5" name="event_time">
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;CURRENT_TIMESTAMP&apos;</DefaultExpression>
+    </column>
+    <column id="46" parent="5" name="user_host">
+      <DataType>mediumtext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="5" name="thread_id">
+      <DataType>bigint(21) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="5" name="server_id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="5" name="command_type">
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="5" name="argument">
+      <DataType>mediumtext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="6" name="help_category_id">
+      <DataType>smallint(5) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="6" name="name">
+      <DataType>char(64)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="6" name="parent_category_id">
+      <DataType>smallint(5) unsigned|0</DataType>
+    </column>
+    <column id="54" parent="6" name="url">
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="55" parent="6" name="name">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="56" parent="6" name="name">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>name</UnderlyingIndexName>
+    </key>
+    <key id="57" parent="6" name="PRIMARY">
+      <ColNames>help_category_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="58" parent="7" name="help_keyword_id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="7" name="name">
+      <DataType>char(64)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="60" parent="7" name="name">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="61" parent="7" name="name">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>name</UnderlyingIndexName>
+    </key>
+    <key id="62" parent="7" name="PRIMARY">
+      <ColNames>help_keyword_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="63" parent="8" name="help_topic_id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="8" name="help_keyword_id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="65" parent="8" name="PRIMARY">
+      <ColNames>help_keyword_id
+help_topic_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="66" parent="9" name="help_topic_id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="9" name="name">
+      <DataType>char(64)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="9" name="help_category_id">
+      <DataType>smallint(5) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="9" name="description">
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="9" name="example">
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="71" parent="9" name="url">
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="72" parent="9" name="name">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="73" parent="9" name="name">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>name</UnderlyingIndexName>
+    </key>
+    <key id="74" parent="9" name="PRIMARY">
+      <ColNames>help_topic_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="75" parent="10" name="db">
+      <DataType>char(64)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="76" parent="10" name="name">
+      <DataType>char(64)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="77" parent="10" name="type">
+      <DataType>enum(&apos;FUNCTION&apos;, &apos;PROCEDURE&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="10" name="specific_name">
+      <DataType>char(64)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="79" parent="10" name="language">
+      <DataType>enum(&apos;SQL&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;SQL&apos;</DefaultExpression>
+    </column>
+    <column id="80" parent="10" name="sql_data_access">
+      <DataType>enum(&apos;CONTAINS_SQL&apos;, &apos;NO_SQL&apos;, &apos;READS_SQL_DATA&apos;, &apos;MODIFIES_SQL_DATA&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;CONTAINS_SQL&apos;</DefaultExpression>
+    </column>
+    <column id="81" parent="10" name="is_deterministic">
+      <DataType>enum(&apos;YES&apos;, &apos;NO&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;NO&apos;</DefaultExpression>
+    </column>
+    <column id="82" parent="10" name="security_type">
+      <DataType>enum(&apos;INVOKER&apos;, &apos;DEFINER&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;DEFINER&apos;</DefaultExpression>
+    </column>
+    <column id="83" parent="10" name="param_list">
+      <DataType>blob|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="84" parent="10" name="returns">
+      <DataType>longblob|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="85" parent="10" name="body">
+      <DataType>longblob|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="86" parent="10" name="definer">
+      <DataType>char(77)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="87" parent="10" name="created">
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;CURRENT_TIMESTAMP&apos;</DefaultExpression>
+    </column>
+    <column id="88" parent="10" name="modified">
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <column id="89" parent="10" name="sql_mode">
+      <DataType>set(&apos;REAL_AS_FLOAT&apos;, &apos;PIPES_AS_CONCAT&apos;, &apos;ANSI_QUOTES&apos;, &apos;IGNORE_SPACE&apos;, &apos;NOT_USED&apos;, &apos;ONLY_FULL_GROUP_BY&apos;, &apos;NO_UNSIGNED_SUBTRACTION&apos;, &apos;NO_DIR_IN_CREATE&apos;, &apos;POSTGRESQL&apos;, &apos;ORACLE&apos;, &apos;MSSQL&apos;, &apos;DB2&apos;, &apos;MAXDB&apos;, &apos;NO_KEY_OPTIONS&apos;, &apos;NO_TABLE_OPTIONS&apos;, &apos;NO_FIELD_OPTIONS&apos;, &apos;MYSQL323&apos;, &apos;MYSQL40&apos;, &apos;ANSI&apos;, &apos;NO_AUTO_VALUE_ON_ZERO&apos;, &apos;NO_BACKSLASH_ESCAPES&apos;, &apos;STRICT_TRANS_TABLES&apos;, &apos;STRICT_ALL_TABLES&apos;, &apos;NO_ZERO_IN_DATE&apos;, &apos;NO_ZERO_DATE&apos;, &apos;INVALID_DATES&apos;, &apos;ERROR_FOR_DIVISION_BY_ZERO&apos;, &apos;TRADITIONAL&apos;, &apos;NO_AUTO_CREATE_USER&apos;, &apos;HIGH_NOT_PRECEDENCE&apos;, &apos;NO_ENGINE_SUBSTITUTION&apos;, &apos;PAD_CHAR_TO_FULL_LENGTH&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="90" parent="10" name="comment">
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="91" parent="10" name="character_set_client">
+      <DataType>char(32)|0</DataType>
+    </column>
+    <column id="92" parent="10" name="collation_connection">
+      <DataType>char(32)|0</DataType>
+    </column>
+    <column id="93" parent="10" name="db_collation">
+      <DataType>char(32)|0</DataType>
+    </column>
+    <column id="94" parent="10" name="body_utf8">
+      <DataType>longblob|0</DataType>
+    </column>
+    <key id="95" parent="10" name="PRIMARY">
+      <ColNames>db
+name
+type</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="96" parent="11" name="start_time">
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;CURRENT_TIMESTAMP&apos;</DefaultExpression>
+    </column>
+    <column id="97" parent="11" name="user_host">
+      <DataType>mediumtext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="98" parent="11" name="query_time">
+      <DataType>time|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="99" parent="11" name="lock_time">
+      <DataType>time|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="100" parent="11" name="rows_sent">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="101" parent="11" name="rows_examined">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="102" parent="11" name="db">
+      <DataType>varchar(512)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="103" parent="11" name="last_insert_id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="104" parent="11" name="insert_id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="105" parent="11" name="server_id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="106" parent="11" name="sql_text">
+      <DataType>mediumtext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="107" parent="11" name="thread_id">
+      <DataType>bigint(21) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="108" parent="12" name="Time_zone_id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="109" parent="12" name="Use_leap_seconds">
+      <DataType>enum(&apos;Y&apos;, &apos;N&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;N&apos;</DefaultExpression>
+    </column>
+    <key id="110" parent="12" name="PRIMARY">
+      <ColNames>Time_zone_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="111" parent="13" name="Transition_time">
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="112" parent="13" name="Correction">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="113" parent="13" name="PRIMARY">
+      <ColNames>Transition_time</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="114" parent="14" name="Name">
+      <DataType>char(64)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="115" parent="14" name="Time_zone_id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="116" parent="14" name="PRIMARY">
+      <ColNames>Name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="117" parent="15" name="Time_zone_id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="118" parent="15" name="Transition_time">
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="119" parent="15" name="Transition_type_id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="120" parent="15" name="PRIMARY">
+      <ColNames>Time_zone_id
+Transition_time</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="121" parent="16" name="Time_zone_id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="122" parent="16" name="Transition_type_id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="123" parent="16" name="Offset">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="124" parent="16" name="Is_DST">
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="125" parent="16" name="Abbreviation">
+      <DataType>char(8)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <key id="126" parent="16" name="PRIMARY">
+      <ColNames>Time_zone_id
+Transition_type_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
